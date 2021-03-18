@@ -22,9 +22,7 @@ async def my_event_handler(event):
         print(sender_id)
         print(event.text)
     if chat_id == -1001425186299 and sender_id == -1001425186299:
-        await client.forward_messages(-421139059, "bot\n" + event.text)
-        await client.forward_messages(-569720378, "bot\n" + event.text)
-
-
+        await client.forward_messages(-421139059, event.message)
+        await client.forward_messages(-569720378, event.message)
 client.start()
 client.run_until_disconnected()
